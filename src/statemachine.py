@@ -26,7 +26,7 @@ def create_statemachine(enable_userinput=True, do_handover=True):
         smach.Sequence.add('OPEN_GRIPPER', OpenGripper())
 
         if enable_userinput:
-            abort_state = 'FIND_GRASP_USERINPUT'
+            abort_state = 'GO_TO_TABLE'
             map = {'f': ['succeeded', 'find grasp point'],
                    'r': ['reset', 'reset state machine']}
             smach.Sequence.add('FIND_GRASP_USERINPUT', UserInput(
